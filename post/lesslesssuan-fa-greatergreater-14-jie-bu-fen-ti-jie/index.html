@@ -1,22 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Ingsuifon.github.io</id>
-    <title>影随风</title>
-    <updated>2020-03-12T12:04:56.712Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Ingsuifon.github.io"/>
-    <link rel="self" href="https://Ingsuifon.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
-    <logo>https://Ingsuifon.github.io/images/avatar.png</logo>
-    <icon>https://Ingsuifon.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 影随风</rights>
-    <entry>
-        <title type="html"><![CDATA[《算法》1.4节部分题解]]></title>
-        <id>https://Ingsuifon.github.io/post/lesslesssuan-fa-greatergreater-14-jie-bu-fen-ti-jie/</id>
-        <link href="https://Ingsuifon.github.io/post/lesslesssuan-fa-greatergreater-14-jie-bu-fen-ti-jie/">
-        </link>
-        <updated>2020-03-12T12:01:24.000Z</updated>
-        <content type="html"><![CDATA[<p>14<br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>《算法》1.4节部分题解 | 影随风</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Ingsuifon.github.io/favicon.ico?v=1584014539755">
+<link rel="stylesheet" href="https://Ingsuifon.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="14
+4-sum。为4-sum设计一个算法。
+public int fourSum(int[] a) {
+    int len = a.length;
+    int cnt = 0;
+    for (int l = 0; l &lt;..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Ingsuifon.github.io">
+        <img src="https://Ingsuifon.github.io/images/avatar.png?v=1584014539755" class="site-logo">
+        <h1 class="site-title">影随风</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/Ingsuifon/" target="_blank">Ingsuifon</a> | <a class="rss" href="https://Ingsuifon.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">《算法》1.4节部分题解</h2>
+            <div class="post-date">2020-03-12</div>
+            
+            <div class="post-content" v-pre>
+              <p>14<br>
 4-sum。为4-sum设计一个算法。</p>
 <pre><code class="language-java">public int fourSum(int[] a) {
     int len = a.length;
@@ -350,251 +433,51 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
     }
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Junity_反射_注解]]></title>
-        <id>https://Ingsuifon.github.io/post/test/</id>
-        <link href="https://Ingsuifon.github.io/post/test/">
-        </link>
-        <updated>2020-03-12T11:19:47.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="今日内容">今日内容</h1>
-<pre><code>1. Junit单元测试
-2. 反射
-3. 注解
-</code></pre>
-<h2 id="junit单元测试">Junit单元测试：</h2>
-<pre><code>* 测试分类：
-	1. 黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。
-	2. 白盒测试：需要写代码的。关注程序具体的执行流程。
 
-* Junit使用：白盒测试
-	* 步骤：
-		1. 定义一个测试类(测试用例)
-			* 建议：
-				* 测试类名：被测试的类名Test		CalculatorTest
-				* 包名：xxx.xxx.xx.test		cn.itcast.test
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Ingsuifon.github.io/post/test/">
+                  <h3 class="post-title">
+                    Junity_反射_注解
+                  </h3>
+                </a>
+              </div>
+            
 
-		2. 定义测试方法：可以独立运行
-			* 建议：
-				* 方法名：test测试的方法名		testAdd()  
-				* 返回值：void
-				* 参数列表：空参
+            
 
-		3. 给方法加@Test
-		4. 导入junit依赖环境
+          </div>
 
-	* 判定结果：
-		* 红色：失败
-		* 绿色：成功
-		* 一般我们会使用断言操作来处理结果
-			* Assert.assertEquals(期望的结果,运算的结果);
+        </div>
+      </div>
+    </div>
 
-	* 补充：
-		* @Before:
-			* 修饰的方法会在测试方法之前被自动执行
-		* @After:
-			* 修饰的方法会在测试方法执行之后自动被执行
-</code></pre>
-<h2 id="反射框架设计的灵魂">反射：框架设计的灵魂</h2>
-<pre><code>* 框架：半成品软件。可以在框架的基础上进行软件开发，简化编码
-* 反射：将类的各个组成部分封装为其他对象，这就是反射机制
-	* 好处：
-		1. 可以在程序运行过程中，操作这些对象。
-		2. 可以解耦，提高程序的可扩展性。
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
 
 
-* 获取Class对象的方式：
-	1. Class.forName(&quot;全类名&quot;)：将字节码文件加载进内存，返回Class对象
-		* 多用于配置文件，将类名定义在配置文件中。读取文件，加载类
-	2. 类名.class：通过类名的属性class获取
-		* 多用于参数的传递
-	3. 对象.getClass()：getClass()方法在Object类中定义着。
-		* 多用于对象的获取字节码的方式
-
-	* 结论：
-		同一个字节码文件(*.class)在一次程序运行过程中，只会被加载一次，不论通过哪一种方式获取的Class对象都是同一个。
-
-
-* Class对象功能：
-	* 获取功能：
-		1. 获取成员变量们
-			* Field[] getFields() ：获取所有public修饰的成员变量
-			* Field getField(String name)   获取指定名称的 public修饰的成员变量
-
-			* Field[] getDeclaredFields()  获取所有的成员变量，不考虑修饰符
-			* Field getDeclaredField(String name)  
-		2. 获取构造方法们
-			* Constructor&lt;?&gt;[] getConstructors()  
-			* Constructor&lt;T&gt; getConstructor(类&lt;?&gt;... parameterTypes)  
-
-			* Constructor&lt;T&gt; getDeclaredConstructor(类&lt;?&gt;... parameterTypes)  
-			* Constructor&lt;?&gt;[] getDeclaredConstructors()  
-		3. 获取成员方法们：
-			* Method[] getMethods()  
-			* Method getMethod(String name, 类&lt;?&gt;... parameterTypes)  
-
-			* Method[] getDeclaredMethods()  
-			* Method getDeclaredMethod(String name, 类&lt;?&gt;... parameterTypes)  
-
-		4. 获取全类名	
-			* String getName()  
-
-
-* Field：成员变量
-	* 操作：
-		1. 设置值
-			* void set(Object obj, Object value)  
-		2. 获取值
-			* get(Object obj) 
-
-		3. 忽略访问权限修饰符的安全检查
-			* setAccessible(true):暴力反射
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
 
 
 
-* Constructor:构造方法
-	* 创建对象：
-		* T newInstance(Object... initargs)  
-
-		* 如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法
 
 
-* Method：方法对象
-	* 执行方法：
-		* Object invoke(Object obj, Object... args)  
-
-	* 获取方法名称：
-		* String getName:获取方法名
-
-
-* 案例：
-	* 需求：写一个&quot;框架&quot;，不能改变该类的任何代码的前提下，可以帮我们创建任意类的对象，并且执行其中任意方法
-		* 实现：
-			1. 配置文件
-			2. 反射
-		* 步骤：
-			1. 将需要创建的对象的全类名和需要执行的方法定义在配置文件中
-			2. 在程序中加载读取配置文件
-			3. 使用反射技术来加载类文件进内存
-			4. 创建对象
-			5. 执行方法
-</code></pre>
-<h2 id="注解">注解：</h2>
-<pre><code>* 概念：说明程序的。给计算机看的
-* 注释：用文字描述程序的。给程序员看的
-
-* 定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。
-* 概念描述：
-	* JDK1.5之后的新特性
-	* 说明程序的
-	* 使用注解：@注解名称
-	
-
-* 作用分类：
-	①编写文档：通过代码里标识的注解生成文档【生成文档doc文档】
-	②代码分析：通过代码里标识的注解对代码进行分析【使用反射】
-	③编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Override】
-
-
-* JDK中预定义的一些注解
-	* @Override	：检测被该注解标注的方法是否是继承自父类(接口)的
-	* @Deprecated：该注解标注的内容，表示已过时
-	* @SuppressWarnings：压制警告
-		* 一般传递参数all  @SuppressWarnings(&quot;all&quot;)
-
-* 自定义注解
-	* 格式：
-		元注解
-		public @interface 注解名称{
-			属性列表;
-		}
-
-	* 本质：注解本质上就是一个接口，该接口默认继承Annotation接口
-		* public interface MyAnno extends java.lang.annotation.Annotation {}
-
-	* 属性：接口中的抽象方法
-		* 要求：
-			1. 属性的返回值类型有下列取值
-				* 基本数据类型
-				* String
-				* 枚举
-				* 注解
-				* 以上类型的数组
-
-			2. 定义了属性，在使用时需要给属性赋值
-				1. 如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值。
-				2. 如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可。
-				3. 数组赋值时，值使用{}包裹。如果数组中只有一个值，则{}可以省略
-	
-	* 元注解：用于描述注解的注解
-		* @Target：描述注解能够作用的位置
-			* ElementType取值：
-				* TYPE：可以作用于类上
-				* METHOD：可以作用于方法上
-				* FIELD：可以作用于成员变量上
-		* @Retention：描述注解被保留的阶段
-			* @Retention(RetentionPolicy.RUNTIME)：当前被描述的注解，会保留到class字节码文件中，并被JVM读取到
-		* @Documented：描述注解是否被抽取到api文档中
-		* @Inherited：描述注解是否被子类继承
-
-
-* 在程序使用(解析)注解：获取注解中定义的属性值
-	1. 获取注解定义的位置的对象  （Class，Method,Field）
-	2. 获取指定的注解
-		* getAnnotation(Class)
-		//其实就是在内存中生成了一个该注解接口的子类实现对象
-
-	            public class ProImpl implements Pro{
-	                public String className(){
-	                    return &quot;cn.itcast.annotation.Demo1&quot;;
-	                }
-	                public String methodName(){
-	                    return &quot;show&quot;;
-	                }
-	            }
-	3. 调用注解中的抽象方法获取配置的属性值
-
-
-* 案例：简单的测试框架
-* 小结：
-	1. 以后大多数时候，我们会使用注解，而不是自定义注解
-	2. 注解给谁用？
-		1. 编译器
-		2. 给解析程序用
-	3. 注解不是程序的一部分，可以理解为注解就是一个标签</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://Ingsuifon.github.io/post/hello-gridea/</id>
-        <link href="https://Ingsuifon.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+  </body>
+</html>
