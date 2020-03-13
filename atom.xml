@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Ingsuifon.github.io</id>
     <title>影随风</title>
-    <updated>2020-03-13T06:16:16.875Z</updated>
+    <updated>2020-03-13T12:18:05.148Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Ingsuifon.github.io"/>
     <link rel="self" href="https://Ingsuifon.github.io/atom.xml"/>
@@ -10,6 +10,180 @@
     <logo>https://Ingsuifon.github.io/images/avatar.png</logo>
     <icon>https://Ingsuifon.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 影随风</rights>
+    <entry>
+        <title type="html"><![CDATA[汇编语言学习：基本语言元素]]></title>
+        <id>https://Ingsuifon.github.io/post/hui-bian-yu-yan-ji-chu/</id>
+        <link href="https://Ingsuifon.github.io/post/hui-bian-yu-yan-ji-chu/">
+        </link>
+        <updated>2020-03-13T10:03:04.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="整数常量">整数常量</h3>
+<p>由一个可选前置符号、一个或多个数字以及一个指明基数的可选基数字符组成：<br>
+[{+ | -}] digits [radix]</p>
+<table>
+<thead>
+<tr>
+<th>h</th>
+<th>十六进制</th>
+<th>r</th>
+<th>编码实数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q/o</td>
+<td>八进制</td>
+<td>t</td>
+<td>十进制（备用）</td>
+</tr>
+<tr>
+<td>d</td>
+<td>十进制</td>
+<td>y</td>
+<td>二进制（备用）</td>
+</tr>
+<tr>
+<td>b</td>
+<td>二进制</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>26     ;十进制<br>
+26d     ;十进制<br>
+11010011b   ;二进制<br>
+42o    ;八进制</p>
+<h3 id="整形常量表达式">整形常量表达式</h3>
+<p>包含整数常量和算术运算符，计算结果必须是一个整数，并可用32位来存放。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>名称</th>
+<th>优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>()</td>
+<td>圆括号</td>
+<td>1</td>
+</tr>
+<tr>
+<td>+，-</td>
+<td>一元加、减</td>
+<td>2</td>
+</tr>
+<tr>
+<td>*，/</td>
+<td>乘、除</td>
+<td>3</td>
+</tr>
+<tr>
+<td>MOD</td>
+<td>取模</td>
+<td>3</td>
+</tr>
+<tr>
+<td>+，-</td>
+<td>加、减</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="实数常量">实数常量</h3>
+<p>用于表示一个十进制实数和编码（十六进制）实数。十进制实数包含一个可选符号，其后跟随一个整数，一个十进制小数点，一个可选的表示小数部分的整数和一个可选的指数。<br>
+[sign] integer. [integer] [exponent]<br>
+符号和指数格式如下：<br>
+sign: {+,-}<br>
+exponent: E [{+,-}] integer<br>
+2.<br>
++3.0<br>
+-44.2E+05<br>
+26.E5</p>
+<h3 id="字符常量">字符常量</h3>
+<p>用单引号或双引号包含的一个字符。<br>
+'a'<br>
+&quot;B&quot;</p>
+<h3 id="字符串常量">字符串常量</h3>
+<p>用单引号或双引号包含的一个字符（含空格）序列。<br>
+'ABC'<br>
+&quot;Hello world&quot;</p>
+<h3 id="保留字">保留字</h3>
+<p>默认情况下不区分大小写。</p>
+<ul>
+<li>指令助记符，如MOV、ADD、MUL</li>
+<li>寄存器名称</li>
+<li>伪指令，告诉汇编器如何汇编程序</li>
+<li>属性，提供变量和操作数的大小与使用信息，如BYTE和WORD</li>
+<li>运算符</li>
+<li>预定义符号，如@data</li>
+</ul>
+<h3 id="标识符">标识符</h3>
+<ul>
+<li>可以包含1-247个字符</li>
+<li>不区分大小写</li>
+<li>第一个字母必须为字母、下划线、@、？或$</li>
+<li>不能与保留字相同</li>
+</ul>
+<h3 id="伪指令">伪指令</h3>
+<ul>
+<li>伪指令是嵌入源代码中的命令，由汇编器识别和执行。</li>
+<li>可以定义变量、宏和子程序。</li>
+<li>为内存段分配名称，执行其他许多与汇编器相关的工作</li>
+<li>默认不区分大小写</li>
+</ul>
+<p>DWORD伪指令告诉汇编器在程序中为一个双字变量保留空间。<br>
+MOV指令在运行时执行。<br>
+myVar DWORD 26<br>
+mov eax, myVar<br>
+ <strong>定义段</strong><br>
+ 程序中的段具有不同的作用。</p>
+<ul>
+<li>.data：定义数据区</li>
+<li>.code：定义代码区</li>
+<li>.stack 100h：定义堆栈区并设置大小</li>
+</ul>
+<h3 id="指令">指令</h3>
+<p>是一种语句，在程序汇编时变得可执行，汇编器将其翻译为机器语言，并在运行时由CPU加载和执行。一条指令有四个组成部分：</p>
+<ul>
+<li>标号（可选）</li>
+<li>指令助记符（必需）</li>
+<li>操作数（看情况）</li>
+<li>注释（可选）</li>
+</ul>
+<p> 1、标号：一种标识符，可以标记数据和指令的位置，分为数据标号和指令标号。<br>
+ <strong>数据标号</strong>标识变量的位置，相当于变量的引用。下面的语句定义了名为count的变量。<br>
+ count DWORD 100<br>
+ <strong>指令标号</strong>用于标识一块程序代码区，必须用冒号结束，用于跳转和循环指令。下面的JMP指令创建了一个循环，跳转到target标识的位置。<br>
+ target:<br>
+  mov  ax, bx<br>
+  ...<br>
+  jmp  target</p>
+<p> 2、指令助记符：标记一条指令的短单词。如MOV，ADD和SUB。<br>
+ 3、操作数：指令输入输出的值。操作数可以是寄存器、内存操作数、整数表达式和输入输出端口。当指令有多个操作数时，通常第一个是目的操作数，第二个是源操作数。<br>
+ 4、注释：通常包含下列信息：</p>
+<ul>
+<li>程序目标的说明</li>
+<li>程序创建者或修改者的名单</li>
+<li>程序创建或修改的日期</li>
+<li>程序实现技术的说明</li>
+</ul>
+<p>注释有两种指定方法：</p>
+<ul>
+<li>单行注释：用分号开始</li>
+<li>块注释：用COMMENT伪指令和一个用户定义的符号开始，以用户定义的符号结束。<br>
+COMMENT !<br>
+  This line is a comment.<br>
+  This line is a comment.<br>
+!</li>
+</ul>
+<p> 5、NOP（空操作）指令：在程序空间中占一字节，有时被编译器和汇编器用于将代码对齐到有效的地址边界。在下面的例子中，第一条指令MOV生成了3字节的机器代码，NOP指令就把第三条指令的地址对齐到双字节边界：<br>
+00000000  66 8B C3  mov ax, bx<br>
+00000003  90      nop<br>
+00000004  8B D1    mov edx, ecx</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello, Rust]]></title>
         <id>https://Ingsuifon.github.io/post/hello-rust/</id>
@@ -331,13 +505,13 @@ public static int FibonacciSearch(int key, int[] arr) {
 35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
 -221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
 s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span></span></span></span>次鸡蛋即可判断F的值，然后想办法把这个成本降低到~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">‘</mi><mi>c</mi><msqrt><mi>F</mi></msqrt><mi mathvariant="normal">‘</mi></mrow><annotation encoding="application/x-tex">`c\sqrt{F}`</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.11333499999999996em;"></span><span class="mord">‘</span><span class="mord mathdefault">c</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span></span></span></span>次鸡蛋即可判断F的值，然后想办法把这个成本降低到~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><msqrt><mi>F</mi></msqrt></mrow><annotation encoding="application/x-tex">c\sqrt{F}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.11333499999999996em;"></span><span class="mord mathdefault">c</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
 -10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
 -50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
 35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
 -221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
 s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span><span class="mord">‘</span></span></span></span>次。</p>
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span></span></span></span>次。</p>
 <p>前者实现：把一个鸡蛋从第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{N}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.11333499999999996em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
 -10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
 -50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
